@@ -26,6 +26,7 @@ class Solution:
         return count
         # list=s.split(' ')
         # return len(list[-1])
+        # 这种写法没有考虑字符串结尾是空格的情况
 
 object=Solution()
 s="a "
