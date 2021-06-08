@@ -28,6 +28,7 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 '''
 
+
 class Solution:
     def isUgly(self, num: int):
         if num <= 0:
@@ -41,8 +42,9 @@ class Solution:
                 elif num % 3 == 0:
                     num = num // 3
                 else:
-                    num = num //5
+                    num = num // 5
         return True
 
-obj=Solution()
+
+obj = Solution()
 print(obj.isUgly(88))

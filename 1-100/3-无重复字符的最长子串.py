@@ -42,32 +42,34 @@ print(s1)
 print(max_number)
 '''
 
+
 class Solution:
     def lengthOfLongestSubstring(self, s):
         """
         :type s: str
         :rtype: int
         """
-        #s='abcabcbb'
+        # s='abcabcbb'
         max_number = 0
         number = 0
         test = ''
         for i in s:
-    #如果i不在test字符串里面，字符串test添加这个字符，number+1
+            # 如果i不在test字符串里面，字符串test添加这个字符，number+1
             if i not in test:
                 test += i
                 number += 1
                 global s1
-                s1=test
-            else:  #i在test字符串里
+                s1 = test
+            else:  # i在test字符串里
                 if number >= max_number:
                     max_number = number
                 index = test.index(i)
                 test = test[(index+1):] + i
-                number=len(test)
+                number = len(test)
             if number > max_number:
                 max_number = number
         return max_number
-obj=Solution()
-obj.lengthOfLongestSubstring('pwwkew')
 
+
+obj = Solution()
+obj.lengthOfLongestSubstring('pwwkew')
