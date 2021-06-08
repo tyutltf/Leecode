@@ -28,6 +28,7 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 '''
 
+
 class Solution:
     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
         nums1.sort()
@@ -40,7 +41,7 @@ class Solution:
             elif nums1[left] == nums2[right]:
                 r.append(nums1[left])
                 left += 1
-                right += 1    
+                right += 1
             else:
                 right += 1
         return r

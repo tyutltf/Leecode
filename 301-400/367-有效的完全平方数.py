@@ -16,6 +16,8 @@
 链接：https://leetcode-cn.com/problems/valid-perfect-square
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 '''
+
+
 class Solution:
     def isPerfectSquare(self, num: int) -> bool:
         l, r = 1, num
@@ -27,5 +29,6 @@ class Solution:
                 r = mid
         return l * l == num
 
-obj=Solution()
+
+obj = Solution()
 print(obj.isPerfectSquare(16))

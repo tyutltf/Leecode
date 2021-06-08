@@ -34,18 +34,19 @@ numArray.sumRange(0, 5); // return -3 ((-2) + 0 + 3 + (-5) + 2 + (-1))
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 '''
 
+
 class NumArray:
-    
+
     def __init__(self, nums):
-        self.num_sum = [0,]
+        self.num_sum = [0, ]
         for i in range(len(nums)):
             self.num_sum.append(self.num_sum[i]+nums[i])
         print(self.num_sum)
 
-
     def sumRange(self, i: int, j: int):
         return self.num_sum[j+1] - self.num_sum[i]
 
-obj=NumArray([-2, 0, 3, -5, 2, -1])
 
-print(obj.sumRange(0,2))
+obj = NumArray([-2, 0, 3, -5, 2, -1])
+
+print(obj.sumRange(0, 2))

@@ -22,23 +22,25 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 '''
 
+
 class Solution:
-    def reverseVowels(self, s:str):
-        dic = ['a','e','i','o','u','A','E','I','O','U']
-        l=0
-        r=len(s)-1
-        s=list(s)
+    def reverseVowels(self, s: str):
+        dic = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+        l = 0
+        r = len(s)-1
+        s = list(s)
         print(s)
-        while l<r:
+        while l < r:
             if s[l] in dic and s[r] in dic:
-                s[l],s[r]=s[r],s[l]
-                l+=1
-                r-=1
+                s[l], s[r] = s[r], s[l]
+                l += 1
+                r -= 1
             if s[l] not in dic:
-                l+=1
+                l += 1
             if s[r] not in dic:
-                r-=1
+                r -= 1
         return ''.join(s)
 
-obj=Solution()
+
+obj = Solution()
 print(obj.reverseVowels("leotcede"))

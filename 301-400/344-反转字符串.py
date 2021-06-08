@@ -18,6 +18,7 @@
 输出：["h","a","n","n","a","H"]
 '''
 
+
 class Solution:
     def reverseString(self, s):
         # 普通解法
@@ -38,5 +39,6 @@ class Solution:
             right -= 1
         return s
 
-obj=Solution()
-print(obj.reverseString(["H","a","n","n","a","h"]))
+
+obj = Solution()
+print(obj.reverseString(["H", "a", "n", "n", "a", "h"]))

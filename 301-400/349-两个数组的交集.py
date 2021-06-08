@@ -23,13 +23,15 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 '''
 
+
 class Solution:
     def intersection(self, nums1, nums2):
-        nums1= set(nums1)
-        nums2= set(nums2)
+        nums1 = set(nums1)
+        nums2 = set(nums2)
         return nums1 & nums2
 
-nums1=[1,2,2,1]
-nums2=[2,2]
-obj=Solution()
-print(obj.intersection(nums1,nums2))
+
+nums1 = [1, 2, 2, 1]
+nums2 = [2, 2]
+obj = Solution()
+print(obj.intersection(nums1, nums2))
