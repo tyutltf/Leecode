@@ -27,19 +27,20 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 '''
 
+
 class Solution:
-    def wordPattern(self,pattern,s):
-        s1=s.split(' ')
+    def wordPattern(self, pattern, s):
+        s1 = s.split(' ')
         if len(s1) != len(pattern):
             return False
         print(s1)
         dic = {}
-        for i,x in enumerate(s1):
-            print(i,x)
+        for i, x in enumerate(s1):
+            print(i, x)
             if pattern[i] not in dic:
                 if x in dic.values():
                     return False
-                dic[pattern[i]] = x0
+                dic[pattern[i]] = x
             else:
                 if x != dic[pattern[i]]:
                     return False
@@ -49,5 +50,5 @@ class Solution:
 
 pattern = "abba"
 s = "dog cat cat dog"
-obj=Solution()
-print(obj.wordPattern(pattern,s))
+obj = Solution()
+print(obj.wordPattern(pattern, s))
