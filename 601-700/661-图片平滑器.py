@@ -38,7 +38,7 @@ from typing import List
 
 
 class Solution:
-    def imageSmoother(self, M: List[List[int]]) -> List[List[int]]:
+    def imageSmoother(self, M: List[List[int]]):
         # ans = [[0] * len(M[0]) for _ in M]
         # for row,col in [(i,j) for i in range(len(M)) for j in range(len(M[0]))]:
         #     count = 0
