@@ -39,4 +39,20 @@ nums 的每个元素都将在 [-9999, 9999]之间。
 
 class Solution:
     def search(self, nums: List[int], target: int):
-        pass
+        # * 普通的二分查找 数组为有序数组，同时题目还强调数组中无重复元素，因为一旦有重复元素，使用二分查找法返回的元素下标可能不是唯一的
+        left = 0
+        right = len(nums)-1
+        while left <= right:
+            middle = (left + right)//2
+            if target < nums[middle]:
+                right = middle-1
+            elif target > nums[middle]:
+                left = middle+1
+            else:
+                return middle
+        return -1
+
+
+object = Solution()
+nums, target = [-1, 0, 3, 5, 9, 12], 9
+print(object.search(nums, target))
