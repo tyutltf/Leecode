@@ -46,12 +46,14 @@ from typing import List
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 '''
 
+
 class Solution:
     def uniqueMorseRepresentations(self, words: List[str]) -> int:
         # words = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
         # chars = [chr(i) for i in range(97, 97+26)]
         # chr_dict = dict(zip(chars,words))
-        chr_dict = {'a': '.-', 'b': '-...', 'c': '-.-.', 'd': '-..', 'e': '.', 'f': '..-.', 'g': '--.', 'h': '....', 'i': '..', 'j': '.---', 'k': '-.-', 'l': '.-..', 'm': '--', 'n': '-.', 'o': '---', 'p': '.--.', 'q': '--.-', 'r': '.-.', 's': '...', 't': '-', 'u': '..-', 'v': '...-', 'w': '.--', 'x': '-..-', 'y': '-.--', 'z': '--..'}
+        chr_dict = {'a': '.-', 'b': '-...', 'c': '-.-.', 'd': '-..', 'e': '.', 'f': '..-.', 'g': '--.', 'h': '....', 'i': '..', 'j': '.---', 'k': '-.-', 'l': '.-..', 'm': '--',
+                    'n': '-.', 'o': '---', 'p': '.--.', 'q': '--.-', 'r': '.-.', 's': '...', 't': '-', 'u': '..-', 'v': '...-', 'w': '.--', 'x': '-..-', 'y': '-.--', 'z': '--..'}
         print(chr_dict)
         # 可以用列表推导式
         # translate_words = []
@@ -59,13 +61,13 @@ class Solution:
         #     temp = [chr_dict.get(i) for i in list(word)]
         #     temp_str = ''.join(temp)
         #     translate_words.append(temp_str)
-        translate_words = [''.join([chr_dict.get(i) for i in word]) for word in words]
+        translate_words = [''.join([chr_dict.get(i)
+                                   for i in word]) for word in words]
         print(translate_words)
         count = len(set(translate_words))
         return count
-        
-            
+
 
 obj = Solution()
-words = ['awe','b','c','d','e','f','g','g']
+words = ['awe', 'b', 'c', 'd', 'e', 'f', 'g', 'g']
 print(obj.uniqueMorseRepresentations(words))
