@@ -1,4 +1,14 @@
-'''
+# -*- encoding: utf-8 -*-
+"""
+@File    :   66-加一.py
+@Time    :   2023/06/09 20:11:02
+@Author  :   TYUT ltf
+@Version :   v1.0
+@Contact :   18235121656@163.com
+@Lic
+"""
+
+"""
 给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。
 
 最高位数字存放在数组的首位， 数组中每个元素只存储一个数字。
@@ -15,7 +25,7 @@
 输入: [4,3,2,1]
 输出: [4,3,2,2]
 解释: 输入数组表示数字 4321。
-'''
+"""
 
 
 class Solution:
@@ -27,7 +37,7 @@ class Solution:
         length = len(digits)
         result = []
         num = 0
-        #先转换成整数在做。。
+        # 先转换成整数在做。。
         for i in range(length):
             num += digits[i] * (10 ** (length - 1 - i))
         num += 1
@@ -36,6 +46,8 @@ class Solution:
             result.append(int(i))
 
         return result
-object=Solution()
-results=object.plusOne([1,2,9,9])
+
+
+object = Solution()
+results = object.plusOne([1, 2, 9, 9])
 print(results)

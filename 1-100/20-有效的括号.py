@@ -1,4 +1,13 @@
-'''
+# -*- encoding: utf-8 -*-
+"""
+@File    :   20-有效的括号.py
+@Time    :   2023/06/09 20:11:02
+@Author  :   TYUT ltf
+@Version :   v1.0
+@Contact :   18235121656@163.com
+@License :   (C)Copyright 2020-2030, GNU General Public License
+"""
+"""
 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
 
 有效字符串需满足：
@@ -27,14 +36,14 @@
 
 输入: "{[]}"
 输出: true
-'''
+"""
 
-s=input('请输入字符串:')
-stack=[]
-map={')':'(',']':'[','}':'{'}
+s = input("请输入字符串:")
+stack = []
+map = {")": "(", "]": "[", "}": "{"}
 for char in s:
     if char not in map:
         stack.append(char)
-    elif not stack or map[char]!=stack.pop():
+    elif not stack or map[char] != stack.pop():
         print(False)
 print(not stack)

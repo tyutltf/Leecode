@@ -1,4 +1,16 @@
-'''
+# -*- encoding: utf-8 -*-
+"""
+@File    :   3-无重复字符的最长子串.py
+@Time    :   2023/06/09 20:11:02
+@Author  :   TYUT ltf
+@Version :   v1.0
+@Contact :   18235121656@163.com
+@License :   (C)Copyright 2020-2030, GNU General Public License
+"""
+# here put the import lib
+
+
+"""
 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
 
 示例 1:
@@ -17,8 +29,8 @@
 输出: 3
 解释: 因为无重复字符的最长子串是 "wke"，所以其长度为 3。
      请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。
-'''
-'''
+"""
+"""
 s='pwwkew'
 max_number = 0
 number = 0
@@ -40,7 +52,7 @@ for i in s:
         max_number = number
 print(s1)
 print(max_number)
-'''
+"""
 
 
 class Solution:
@@ -52,7 +64,7 @@ class Solution:
         # s='abcabcbb'
         max_number = 0
         number = 0
-        test = ''
+        test = ""
         for i in s:
             # 如果i不在test字符串里面，字符串test添加这个字符，number+1
             if i not in test:
@@ -64,7 +76,7 @@ class Solution:
                 if number >= max_number:
                     max_number = number
                 index = test.index(i)
-                test = test[(index+1):] + i
+                test = test[(index + 1):] + i
                 number = len(test)
             if number > max_number:
                 max_number = number
@@ -72,4 +84,4 @@ class Solution:
 
 
 obj = Solution()
-obj.lengthOfLongestSubstring('pwwkew')
+obj.lengthOfLongestSubstring("pwwkew")

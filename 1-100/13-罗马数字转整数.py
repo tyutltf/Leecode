@@ -1,4 +1,13 @@
-'''
+# -*- encoding: utf-8 -*-
+"""
+@File    :   13-罗马数字转整数.py
+@Time    :   2023/06/09 20:11:02
+@Author  :   TYUT ltf
+@Version :   v1.0
+@Contact :   18235121656@163.com
+@License :   (C)Copyright 2020-2030, GNU General Public License
+"""
+"""
 罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。
 
 字符          数值
@@ -40,14 +49,14 @@ C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。
 输入: "MCMXCIV"
 输出: 1994
 解释: M = 1000, CM = 900, XC = 90, IV = 4.
-'''
+"""
 
-s=input('请输入罗马数字:')
-a = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
-ans=0
+s = input("请输入罗马数字:")
+a = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+ans = 0
 for i in range(len(s)):
-    if i<len(s)-1 and a[s[i]]<a[s[i+1]]: #左边的罗马数字比右边小就相减
-        ans-=a[s[i]]
-    else:                               #否则就相加
-        ans+=a[s[i]]
+    if i < len(s) - 1 and a[s[i]] < a[s[i + 1]]:  # 左边的罗马数字比右边小就相减
+        ans -= a[s[i]]
+    else:  # 否则就相加
+        ans += a[s[i]]
 print(ans)

@@ -1,4 +1,13 @@
-'''
+# -*- encoding: utf-8 -*-
+"""
+@File    :   15-三数之和.py
+@Time    :   2023/06/09 20:11:02
+@Author  :   TYUT ltf
+@Version :   v1.0
+@Contact :   18235121656@163.com
+@License :   (C)Copyright 2020-2030, GNU General Public License
+"""
+"""
 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。
 
 注意：答案中不可以包含重复的三元组。
@@ -27,37 +36,37 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/3sum
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
 
 
 class Solution:
     def threeSum(self, nums):
         n = len(nums)
         res = []
-        if(not nums or n < 3):
+        if not nums or n < 3:
             return []
         nums.sort()
         res = []
         for i in range(n):
-            if(nums[i] > 0):
+            if nums[i] > 0:
                 return res
-            if(i > 0 and nums[i] == nums[i-1]):
+            if i > 0 and nums[i] == nums[i - 1]:
                 continue
-            L = i+1
-            R = n-1
-            while(L < R):
-                if(nums[i]+nums[L]+nums[R] == 0):
+            L = i + 1
+            R = n - 1
+            while L < R:
+                if nums[i] + nums[L] + nums[R] == 0:
                     res.append([nums[i], nums[L], nums[R]])
-                    while(L < R and nums[L] == nums[L+1]):
-                        L = L+1
-                    while(L < R and nums[R] == nums[R-1]):
-                        R = R-1
-                    L = L+1
-                    R = R-1
-                elif(nums[i]+nums[L]+nums[R] > 0):
-                    R = R-1
+                    while L < R and nums[L] == nums[L + 1]:
+                        L = L + 1
+                    while L < R and nums[R] == nums[R - 1]:
+                        R = R - 1
+                    L = L + 1
+                    R = R - 1
+                elif nums[i] + nums[L] + nums[R] > 0:
+                    R = R - 1
                 else:
-                    L = L+1
+                    L = L + 1
         return res
 
 
@@ -65,7 +74,7 @@ nums = [-1, 0, 1, 2, -1, -4]
 obj = Solution()
 print(obj.threeSum(nums))
 
-'''
+"""
 排序 + 双指针
 本题的难点在于如何去除重复解。
 
@@ -83,4 +92,4 @@ print(obj.threeSum(nums))
 时间复杂度：O\left(n^{2}\right)O(n2)，数组排序 O(N \log N)O(NlogN)，遍历数组 O\left(n\right)O(n)，双指针遍历 O\left(n\right)O(n)，总体 O(N \log N)+O\left(n\right)*O\left(n\right)O(NlogN)+O(n)∗O(n)，O\left(n^{2}\right)O(n2)
 空间复杂度：O(1)O(1)
 
-'''
+"""

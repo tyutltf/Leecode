@@ -1,4 +1,13 @@
-'''
+# -*- encoding: utf-8 -*-
+"""
+@File    :   12-整数转罗马数字.py
+@Time    :   2023/06/09 20:11:02
+@Author  :   TYUT ltf
+@Version :   v1.0
+@Contact :   18235121656@163.com
+@License :   (C)Copyright 2020-2030, GNU General Public License
+"""
+"""
 罗马数字包含以下七种字符： I， V， X， L，C，D 和 M。
 
 字符          数值
@@ -40,25 +49,27 @@ C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。
 输入: 1994
 输出: "MCMXCIV"
 解释: M = 1000, CM = 900, XC = 90, IV = 4.
-'''
+"""
 
 
 def intToRoman(num):
     m = [
-            ['', 'M', 'MM', 'MMM'],
-            ['', 'C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM'],
-            ['', 'X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC'],
-            ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX']
-        ]
+        ["", "M", "MM", "MMM"],
+        ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"],
+        ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"],
+        ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"],
+    ]
 
     d = [1000, 100, 10, 1]
 
-    r = ''
+    r = ""
 
     for k, v in enumerate(d):
-        print(k,v)
-        r += m[k][int(num/v)]
+        print(k, v)
+        r += m[k][int(num / v)]
         num = num % v
 
     return r
+
+
 print(intToRoman(3124))

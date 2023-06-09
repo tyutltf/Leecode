@@ -1,4 +1,14 @@
-'''
+# -*- encoding: utf-8 -*-
+"""
+@File    :   4-寻找两个正序数组的中位数.py
+@Time    :   2023/06/09 20:11:02
+@Author  :   TYUT ltf
+@Version :   v1.0
+@Contact :   18235121656@163.com
+@License :   (C)Copyright 2020-2030, GNU General Public License
+"""
+
+"""
 给定两个大小为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。请你找出并返回这两个正序数组的中位数。
 
 进阶：你能设计一个时间复杂度为 O(log (m+n)) 的算法解决此问题吗？
@@ -41,27 +51,31 @@ nums2.length == n
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/median-of-two-sorted-arrays
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-'''
+"""
+
 
 class Solution:
     def findMedianSortedArrays(self, nums1, nums2):
-        k1 = ( len(nums1) + len(nums2) + 1 ) // 2
-        k2 = ( len(nums1) + len(nums2) + 2 ) // 2
-        def helper(nums1,nums2,k): #本质上是找第k小的数
-            if(len(nums1) <len(nums2) ):
-                nums1, nums2 = nums2 , nums1 #保持nums1比较长
-            if(len(nums2)==0):
-                return nums1[k-1] # 短数组空，直接返回
-            if(k==1):
-                return min(nums1[0],nums2[0])  #找最小数，比较数组首位
-            t = min(k//2,len(nums2)) # 保证不上溢
-            if( nums1[t-1]>=nums2[t-1] ):
-                return helper(nums1 , nums2[t:],k-t)
-            else:
-                return helper(nums1[t:],nums2,k-t)
-        return ( helper(nums1,nums2,k1) + helper(nums1,nums2,k2) ) /2
+        k1 = (len(nums1) + len(nums2) + 1) // 2
+        k2 = (len(nums1) + len(nums2) + 2) // 2
 
-obj=Solution()
-nums1=[1,3,4,5,7,8,9]
-nums2=[-2,5,7,9,10,15,20]
-print(obj.findMedianSortedArrays(nums1,nums2))
+        def helper(nums1, nums2, k):  # 本质上是找第k小的数
+            if len(nums1) < len(nums2):
+                nums1, nums2 = nums2, nums1  # 保持nums1比较长
+            if len(nums2) == 0:
+                return nums1[k - 1]  # 短数组空，直接返回
+            if k == 1:
+                return min(nums1[0], nums2[0])  # 找最小数，比较数组首位
+            t = min(k // 2, len(nums2))  # 保证不上溢
+            if nums1[t - 1] >= nums2[t - 1]:
+                return helper(nums1, nums2[t:], k - t)
+            else:
+                return helper(nums1[t:], nums2, k - t)
+
+        return (helper(nums1, nums2, k1) + helper(nums1, nums2, k2)) / 2
+
+
+obj = Solution()
+nums1 = [1, 3, 4, 5, 7, 8, 9]
+nums2 = [-2, 5, 7, 9, 10, 15, 20]
+print(obj.findMedianSortedArrays(nums1, nums2))

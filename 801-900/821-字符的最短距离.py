@@ -1,16 +1,16 @@
 # -*- encoding: utf-8 -*-
-'''
+"""
 @File    :   821-字符的最短距离.py
-@Time    :   2023/06/06 15:21:04
+@Time    :   2023/06/06 20:21:04
 @Author  :   TYUT ltf
 @Version :   v1.0
 @Contact :   18235121656@163.com
 @License :   (C)Copyright 2020-2030, GNU General Public License
-'''
+"""
 # here put the import lib
 from typing import List
 
-'''
+"""
 给你一个字符串 s 和一个字符 c ，且 c 是 s 中出现过的字符。
 
 返回一个整数数组 answer ，其中 answer.length == s.length 且 answer[i] 是 s 中从下标 i 到离它 最近 的字符 c 的 距离 。
@@ -35,9 +35,21 @@ from typing import List
 1 <= s.length <= 104
 s[i] 和 c 均为小写英文字母
 题目数据保证 c 在 s 中至少出现一次
-'''
+"""
 
 
 class Solution:
     def shortestToChar(self, s: str, c: str) -> List[int]:
-        pass
+        s_list = list(s)
+        # 找出=c的下标
+        c_index_lint = [i for i in range(len(s_list)) if s_list[i] == c]
+        # 遍历s_list 跟下标列表元素挨个相减的绝对值的最小值
+        res = [min(abs(j - i) for j in c_index_lint) for i in range(len(s_list))]
+        return res
+
+
+s = "loveleetcode"
+c = "e"
+
+obj = Solution()
+print(obj.shortestToChar(s, c))

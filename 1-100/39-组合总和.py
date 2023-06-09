@@ -1,4 +1,13 @@
-'''
+# -*- encoding: utf-8 -*-
+"""
+@File    :   39-组合总和.py
+@Time    :   2023/06/09 20:11:02
+@Author  :   TYUT ltf
+@Version :   v1.0
+@Contact :   18235121656@163.com
+@License :   (C)Copyright 2020-2030, GNU General Public License
+"""
+"""
 给定一个无重复元素的数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。
 
 candidates 中的数字可以无限制重复被选取。
@@ -24,7 +33,7 @@ candidates 中的数字可以无限制重复被选取。
   [2,3,3],
   [3,5]
 ]
-'''
+"""
 
 
 class Solution:
@@ -35,33 +44,33 @@ class Solution:
         :rtype: List[List[int]]
         """
         candidates.sort()
-        length=len(candidates)
-        if length==0:
+        length = len(candidates)
+        if length == 0:
             return []
-        if candidates[0]>target:
+        if candidates[0] > target:
             return []
-        re=[]
+        re = []
 
         for i in range(length):
-            num=candidates[i:]
-            #print(num)
-            temp=target-candidates[i]
-            #print(temp)
-            res=[candidates[i]]
-            #print(res)
-            if temp==0:
+            num = candidates[i:]
+            # print(num)
+            temp = target - candidates[i]
+            # print(temp)
+            res = [candidates[i]]
+            # print(res)
+            if temp == 0:
                 re.append(res)
-            elif temp<0:
+            elif temp < 0:
                 break
             else:
-                a=self.combinationSum(num,temp)
-                for k in a :
-                    k=res+k
+                a = self.combinationSum(num, temp)
+                for k in a:
+                    k = res + k
                     re.append(k)
         return re
 
-object=Solution()
-candidates=[2,3,5,8]
-target=8
-print(object.combinationSum(candidates,target))
 
+object = Solution()
+candidates = [2, 3, 5, 8]
+target = 8
+print(object.combinationSum(candidates, target))
